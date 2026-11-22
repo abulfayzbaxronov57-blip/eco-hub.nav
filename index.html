@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07110c">
+  <meta name="description" content="ECO-Hub — maktab ekologiyasini raqamli boshqarish platformasi">
+  <title>ECO-Hub | School Sustainability</title>
+  <link rel="icon" href="/assets/eco-leaf.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <main id="loginView" class="login-shell">
+    <section class="login-card">
+      <div class="brand-lockup">
+        <img src="/assets/eco-leaf.svg" alt="" class="brand-mark">
+        <div>
+          <div class="brand-name">ECO<span>-HUB</span></div>
+          <div class="brand-caption">SCHOOL SUSTAINABILITY PLATFORM</div>
+        </div>
+      </div>
+      <div class="login-intro">
+        <p class="eyebrow">YASHIL KELAJAK SHU YERDAN BOSHLANADI</p>
+        <h1>Maktab ekologiyasini <span>birgalikda</span> boshqaring.</h1>
+        <p class="muted">Monitoring, eco-missions va maktab reytingi — yagona platformada.</p>
+      </div>
+      <form id="loginForm" class="form-stack">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" name="email" type="email" placeholder="name@school.uz" autocomplete="username" required>
+        <label for="loginPassword">Parol</label>
+        <input id="loginPassword" name="password" type="password" placeholder="Parolingiz" autocomplete="current-password" required>
+        <button class="btn btn-primary btn-full" type="submit">Tizimga kirish <span>→</span></button>
+        <p id="loginError" class="form-error" aria-live="polite"></p>
+      </form>
+      <div class="demo-access">
+        <div class="demo-heading">DEMO KIRISH</div>
+        <div class="demo-buttons">
+          <button type="button" class="demo-btn" data-demo-email="admin@ecohub.local" data-demo-password="EcoHub123!">Admin</button>
+          <button type="button" class="demo-btn" data-demo-email="director@ecohub.local" data-demo-password="EcoHub123!">Direktor</button>
+          <button type="button" class="demo-btn" data-demo-email="teacher@ecohub.local" data-demo-password="EcoHub123!">O‘qituvchi</button>
+          <button type="button" class="demo-btn" data-demo-email="student001@ecohub.local" data-demo-password="Student123!">O‘quvchi</button>
+        </div>
+      </div>
+      <p class="login-footnote">ECO-Hub · Digital tools for a greener school</p>
+    </section>
+    <aside class="login-art">
+      <div class="art-orbit orbit-one"></div>
+      <div class="art-orbit orbit-two"></div>
+      <div class="art-content">
+        <div class="art-tag"><span class="pulse-dot"></span> GREEN SCHOOL INITIATIVE</div>
+        <div class="art-leaf">✳</div>
+        <h2>Small actions.<br><span>Big impact.</span></h2>
+        <p>Har bir tejalgan litr suv, har bir saralangan chiqindi va har bir ekilgan daraxt — umumiy natijamiz.</p>
+        <div class="art-stat-row">
+          <div><strong>300+</strong><small>O‘quvchi</small></div>
+          <div><strong>10</strong><small>Sinf</small></div>
+          <div><strong>1</strong><small>Yashil maqsad</small></div>
+        </div>
+      </div>
+      <div class="art-footer">BUILD A BETTER TOMORROW <span>●</span> ECO-HUB</div>
+    </aside>
+  </main>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <a class="sidebar-brand" href="/" aria-label="ECO-Hub bosh sahifa">
+        <img src="/assets/eco-leaf.svg" alt="" class="brand-mark">
+        <span>ECO<span>-HUB</span></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Asosiy navigatsiya">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span> Umumiy panel</button>
+        <button class="nav-item staff-nav" data-view="students"><span class="nav-icon">♧</span> O‘quvchilar</button>
+        <button class="nav-item" data-view="missions"><span class="nav-icon">✳</span> Eco Missions</button>
+        <button class="nav-item" data-view="resources"><span class="nav-icon">◈</span> Monitoring</button>
+        <button class="nav-item" data-view="messages"><span class="nav-icon">⌁</span> Xabarlar</button>
+        <button class="nav-item admin-nav" data-view="reports"><span class="nav-icon">▤</span> Hisobotlar</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip">
+          <div class="tip-icon">✦</div>
+          <strong>Yashil odat — katta o‘zgarish</strong>
+          <p>Bugungi kichik qadamingiz ertangi kelajakni asraydi.</p>
+        </div>
+        <a class="guide-link" href="/pages/guide.html">Platforma qo‘llanmasi ↗</a>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Menyuni ochish">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="pageTitle">Umumiy panel</strong></div>
+        <div class="topbar-right">
+          <div class="system-status"><span class="pulse-dot"></span> Tizim faol</div>
+          <div class="notification-wrap">
+            <button id="notificationBtn" class="icon-btn" aria-label="Bildirishnomalar">♧<span id="notificationDot" class="notification-dot hidden"></span></button>
+            <div id="notificationPanel" class="notification-panel hidden">
+              <div class="panel-heading">Bildirishnomalar</div>
+              <div id="notificationList" class="notification-list"><p class="muted small">Hozircha bildirishnoma yo‘q.</p></div>
+            </div>
+          </div>
+          <div class="user-menu">
+            <div class="avatar" id="userAvatar">EH</div>
+            <div class="user-meta"><strong id="userName">Foydalanuvchi</strong><small id="userRole">Rol</small></div>
+            <button id="logoutBtn" class="logout-btn" title="Tizimdan chiqish" aria-label="Tizimdan chiqish">↗</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-area">
+        <section id="view-dashboard" class="view-section">
+          <div class="page-heading">
+            <div><p class="eyebrow">ECO MANAGEMENT OVERVIEW</p><h1>Umumiy <span>ko‘rsatkichlar</span></h1><p class="muted">Maktab ekologik faoliyatining bugungi holati.</p></div>
+            <div class="date-chip" id="todayDate">Bugun</div>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span>Jami o‘quvchilar</span><span class="stat-icon">♧</span></div><strong id="statStudents">—</strong><small>Platformadagi o‘quvchilar</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Faol sinflar</span><span class="stat-icon">▦</span></div><strong id="statClasses">—</strong><small>Ro‘yxatga olingan sinflar</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Eco ballar</span><span class="stat-icon">✳</span></div><strong id="statPoints">—</strong><small>O‘quvchilar jamg‘argan ball</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Faol missiyalar</span><span class="stat-icon">↗</span></div><strong id="statMissions">—</strong><small id="statCompleted">Bajarilgan missiyalar: —</small></article>
+          </div>
+          <div class="dashboard-grid">
+            <article class="panel leaderboard-panel">
+              <div class="panel-title-row"><div><p class="eyebrow">CLASS PERFORMANCE</p><h2>Eco Rating</h2></div><span class="live-label"><span class="pulse-dot"></span> LIVE</span></div>
+              <div id="leaderboard" class="leaderboard-list"><p class="muted">Ma’lumot yuklanmoqda...</p></div>
+            </article>
+            <article class="panel resource-panel">
+              <div class="panel-title-row"><div><p class="eyebrow">RESOURCE TRACKING</p><h2>Resurslar holati</h2></div><span class="panel-symbol">◈</span></div>
+              <div id="resourceSummary" class="resource-summary"><p class="muted">Ma’lumot yuklanmoqda...</p></div>
+              <button class="text-link" data-go="resources">Monitoringga o‘tish →</button>
+            </article>
+          </div>
+          <div class="welcome-strip"><div class="welcome-symbol">✳</div><div><strong>Har bir harakat hisobda.</strong><p>Eco Missionlarda qatnashing, sinfingiz reytingini oshiring va maktabingizni yanada yashil qiling.</p></div><button class="btn btn-secondary" data-go="missions">Missiyalarni ko‘rish →</button></div>
+        </section>
+
+        <section id="view-students" class="view-section hidden">
+          <div class="page-heading"><div><p class="eyebrow">SCHOOL DIRECTORY</p><h1>O‘quvchilar <span>boshqaruvi</span></h1><p class="muted">O‘quvchilarni qidiring, qo‘shing va ma’lumotlarini yangilang.</p></div><button id="addStudentBtn" class="btn btn-primary admin-control">＋ O‘quvchi qo‘shish</button></div>
+          <div class="panel">
+            <div class="table-toolbar"><div class="search-box"><span>⌕</span><input id="studentSearch" type="search" placeholder="Ism, email yoki sinf bo‘yicha qidirish..."></div><span id="studentCount" class="muted small">0 ta o‘quvchi</span></div>
+            <div class="table-wrap"><table><thead><tr><th>O‘QUVCHI</th><th>SINF</th><th>EMAIL</th><th>ECO BALL</th><th class="admin-control">AMALLAR</th></tr></thead><tbody id="studentsTable"><tr><td colspan="5" class="empty-state">Ma’lumot yuklanmoqda...</td></tr></tbody></table></div>
+          </div>
+        </section>
+
+        <section id="view-missions" class="view-section hidden">
+          <div class="page-heading"><div><p class="eyebrow">ACTION FOR THE PLANET</p><h1>Eco <span>Missions</span></h1><p class="muted">Ekologik topshiriqlarni bajaring va eco ball to‘plang.</p></div><button id="addMissionBtn" class="btn btn-primary staff-control">＋ Missiya yaratish</button></div>
+          <div id="missionsGrid" class="missions-grid"><p class="muted">Missiyalar yuklanmoqda...</p></div>
+        </section>
+
+        <section id="view-resources" class="view-section hidden">
+          <div class="page-heading"><div><p class="eyebrow">SUSTAINABILITY MONITORING</p><h1>Resurslar <span>monitoringi</span></h1><p class="muted">Suv, elektr, chiqindi va yashil hudud ko‘rsatkichlari.</p></div></div>
+          <div class="resource-metrics" id="resourceMetrics"></div>
+          <div class="panel resource-records-panel">
+            <div class="panel-title-row"><div><p class="eyebrow">DATA LOG</p><h2>Monitoring yozuvlari</h2></div></div>
+            <form id="resourceForm" class="inline-form admin-control">
+              <select name="resource_type" aria-label="Resurs turi" required><option value="water">Suv</option><option value="electricity">Elektr</option><option value="waste">Chiqindi</option><option value="green_area">Yashil hudud</option></select>
+              <input name="amount" type="number" min="0" step="0.1" placeholder="Miqdor" required>
+              <input name="unit" type="text" placeholder="Birlik (litr, kWh...)" required>
+              <input name="record_date" type="date" required>
+              <input name="note" type="text" placeholder="Izoh (ixtiyoriy)">
+              <button class="btn btn-primary" type="submit">Saqlash</button>
+            </form>
+            <div class="table-wrap"><table><thead><tr><th>RESURS</th><th>MIQDOR</th><th>SANA</th><th>IZOH</th><th>KIRITDI</th></tr></thead><tbody id="resourcesTable"><tr><td colspan="5" class="empty-state">Ma’lumot yuklanmoqda...</td></tr></tbody></table></div>
+          </div>
+        </section>
+
+        <section id="view-messages" class="view-section hidden">
+          <div class="page-heading"><div><p class="eyebrow">SCHOOL COMMUNICATION</p><h1>Ichki <span>aloqa</span></h1><p class="muted">Maktab jamoasi bilan platforma ichida muloqot qiling.</p></div></div>
+          <div class="panel chat-panel">
+            <aside class="chat-compose">
+              <label for="messageContact">Kimga yuboriladi?</label>
+              <select id="messageContact" required><option value="">Kontakt tanlang</option></select>
+              <form id="messageForm"><label for="messageBody">Xabar</label><textarea id="messageBody" name="body" rows="5" maxlength="2000" placeholder="Xabaringizni yozing..." required></textarea><button class="btn btn-primary btn-full" type="submit">Xabar yuborish →</button></form>
+              <p class="muted tiny">O‘quvchilar maktab xodimlariga xabar yuborishi mumkin.</p>
+            </aside>
+            <div class="chat-history"><div class="panel-title-row"><div><p class="eyebrow">RECENT CONVERSATIONS</p><h2>Xabarlar tarixi</h2></div><button id="refreshMessages" class="icon-btn" aria-label="Yangilash">↻</button></div><div id="messagesList" class="messages-list"><p class="muted">Xabarlar yuklanmoqda...</p></div></div>
+          </div>
+        </section>
+
+        <section id="view-reports" class="view-section hidden">
+          <div class="page-heading"><div><p class="eyebrow">DATA & EXPORTS</p><h1>Hisobotlar <span>markazi</span></h1><p class="muted">Platformadagi ma’lumotlarni eksport qiling.</p></div></div>
+          <div class="report-grid">
+            <article class="panel report-card"><div class="report-icon">▤</div><p class="eyebrow">STUDENT DATA</p><h2>O‘quvchilar ro‘yxati</h2><p class="muted">O‘quvchi F.I.Sh., email, sinf va eco ballarini CSV formatida yuklab oling.</p><a class="btn btn-primary" href="/api/reports/students.csv">CSV yuklab olish ↓</a></article>
+            <article class="panel report-card"><div class="report-icon">✳</div><p class="eyebrow">ECO PERFORMANCE</p><h2>Eco Rating</h2><p class="muted">Sinf reytingi umumiy panelda real vaqt rejimida yangilanadi.</p><button class="btn btn-secondary" data-go="dashboard">Reytingni ko‘rish →</button></article>
+          </div>
+        </section>
+      </main>
+      <footer class="app-footer"><span>© 2026 ECO-Hub</span><span>Designed for a greener school <b>✳</b></span></footer>
+    </div>
+  </div>
+
+  <dialog id="studentDialog" class="app-dialog">
+    <form id="studentForm" method="dialog">
+      <div class="dialog-heading"><div><p class="eyebrow">STUDENT PROFILE</p><h2 id="studentDialogTitle">O‘quvchi qo‘shish</h2></div><button type="button" class="dialog-close" data-close="studentDialog">×</button></div>
+      <input type="hidden" name="student_id">
+      <label>To‘liq ism<input name="full_name" type="text" placeholder="F.I.Sh." required></label>
+      <label>Email<input name="email" type="email" placeholder="student@school.uz" required></label>
+      <label>Sinf<select name="class_id" id="studentClassSelect" required></select></label>
+      <label id="studentPasswordLabel">Vaqtinchalik parol<input name="password" type="password" minlength="8" placeholder="Kamida 8 belgi"></label>
+      <div class="dialog-actions"><button type="button" class="btn btn-secondary" data-close="studentDialog">Bekor qilish</button><button class="btn btn-primary" type="submit">Saqlash</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="missionDialog" class="app-dialog">
+    <form id="missionForm" method="dialog">
+      <div class="dialog-heading"><div><p class="eyebrow">NEW ECO MISSION</p><h2>Missiya yaratish</h2></div><button type="button" class="dialog-close" data-close="missionDialog">×</button></div>
+      <label>Missiya nomi<input name="title" type="text" placeholder="Masalan: Daraxt ekish kuni" required></label>
+      <label>Tavsif<textarea name="description" rows="3" placeholder="Topshiriq haqida qisqacha..."></textarea></label>
+      <div class="form-two-col"><label>Kategoriya<select name="category"><option value="waste">Chiqindi</option><option value="water">Suv</option><option value="green">Yashil hudud</option><option value="energy">Energiya</option><option value="general">Umumiy</option></select></label><label>Eco ball<input name="points" type="number" min="1" max="500" value="20" required></label></div>
+      <div class="dialog-actions"><button type="button" class="btn btn-secondary" data-close="missionDialog">Bekor qilish</button><button class="btn btn-primary" type="submit">Yaratish</button></div>
+    </form>
+  </dialog>
+</body>
+</html>
